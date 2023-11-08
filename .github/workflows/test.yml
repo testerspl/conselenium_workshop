@@ -1,0 +1,48 @@
+name: E2E
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Log level"
+        required: true
+        default: "warning"
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+      tags:
+        description: "Test scenario tags"
+        required: false
+        type: boolean
+
+jobs:
+  test-app-one:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Install root dependencies
+        run: |
+          npm install
+
+      - name: Build app
+        run: |
+          npm install
+        working-directory: app-version-one
+
+      - name: Start server in the background
+        run: |
+          npm start &
+
+      - name: Install Cypress and run tests
+        uses: cypress-io/github-action@v4
+        with:
+          working-directory: test-framework
+          browser: chrome

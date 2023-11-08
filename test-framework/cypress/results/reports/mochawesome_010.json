@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-09-13T06:24:28.436Z",
+    "end": "2022-09-13T06:24:50.687Z",
+    "duration": 22251,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3be9d5a4-9c78-47c3-ad38-d564037ddb5d",
+      "title": "",
+      "fullFile": "cypress\\tests\\app.cy.js",
+      "file": "cypress\\tests\\app.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cc8c7e52-b218-40b8-8f58-aeccac293aeb",
+          "title": "TodoMVC - React",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "2c4e7147-de99-40bb-bf96-7238dd140187",
+              "title": "Add todo test presentation",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Should add 2 todos",
+                  "fullTitle": "TodoMVC - React Add todo test presentation Should add 2 todos",
+                  "timedOut": null,
+                  "duration": 11051,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('.new-todo').type('learn testing{enter}').type('be cool{enter}');\ncy.get('.todo-list li').should('have.length', 2);",
+                  "err": {},
+                  "uuid": "e5992ad7-1b18-4ca8-ab3f-276e8a4fbfda",
+                  "parentUUID": "2c4e7147-de99-40bb-bf96-7238dd140187",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "e5992ad7-1b18-4ca8-ab3f-276e8a4fbfda"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 11051,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

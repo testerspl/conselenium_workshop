@@ -1,0 +1,827 @@
+{
+  "stats": {
+    "suites": 10,
+    "tests": 15,
+    "passes": 4,
+    "pending": 0,
+    "failures": 11,
+    "start": "2022-09-12T10:08:53.587Z",
+    "end": "2022-09-12T10:09:02.031Z",
+    "duration": 8444,
+    "testsRegistered": 27,
+    "passPercent": 14.814814814814813,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 12,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "0bad8a53-6009-4fa2-b548-7a49ed33af12",
+      "title": "",
+      "fullFile": "cypress\\tests\\app.cy.js",
+      "file": "cypress\\tests\\app.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "34810d40-ad9f-448c-8646-b7f649568f42",
+          "title": "TodoMVC - React",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "e40d8251-6cb5-45fc-b480-86a435091f20",
+              "title": "Add todo test presentation",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Should add 2 todos",
+                  "fullTitle": "TodoMVC - React Add todo test presentation Should add 2 todos",
+                  "timedOut": null,
+                  "duration": 704,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('.new-todo').type('learn testing{enter}').type('be cool{enter}');\ncy.get('.todo-list li').should('have.length', 2);",
+                  "err": {},
+                  "uuid": "47d0451d-838a-4dc8-86eb-4e3a019d0fb5",
+                  "parentUUID": "e40d8251-6cb5-45fc-b480-86a435091f20",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "47d0451d-838a-4dc8-86eb-4e3a019d0fb5"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 704,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "5596a531-3b1e-4c1b-832d-9fb54818d01f",
+              "title": "New Todo",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should allow me to add todo items",
+                  "fullTitle": "TodoMVC - React New Todo should allow me to add todo items",
+                  "timedOut": null,
+                  "duration": 858,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// create 1st todo\ncy.get('.new-todo').type(TODO_ITEM_ONE).type('{enter}'); // make sure the 1st label contains the 1st todo text\ncy.get('.todo-list li').eq(0).find('label').should('contain', TODO_ITEM_ONE); // create 2nd todo\ncy.get('.new-todo').type(TODO_ITEM_TWO).type('{enter}'); // make sure the 2nd label contains the 2nd todo text\ncy.get('.todo-list li').eq(1).find('label').should('contain', TODO_ITEM_TWO);",
+                  "err": {},
+                  "uuid": "b811a8fa-8e8c-4295-a8c8-1f0808aa203b",
+                  "parentUUID": "5596a531-3b1e-4c1b-832d-9fb54818d01f",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "adds items",
+                  "fullTitle": "TodoMVC - React New Todo adds items",
+                  "timedOut": null,
+                  "duration": 851,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// create several todos then check the number of items in the list\ncy.get('.new-todo').type('todo A{enter}').type('todo B{enter}') // we can continue working with same element\n.type('todo C{enter}') // and keep adding new items\n.type('todo D{enter}');\ncy.get('.todo-list li').should('have.length', 4);",
+                  "err": {},
+                  "uuid": "f715364c-8f3d-4722-a5e5-1260569c6f87",
+                  "parentUUID": "5596a531-3b1e-4c1b-832d-9fb54818d01f",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should clear text input field when an item is added",
+                  "fullTitle": "TodoMVC - React New Todo should clear text input field when an item is added",
+                  "timedOut": null,
+                  "duration": 514,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('.new-todo').type(TODO_ITEM_ONE).type('{enter}');\ncy.get('.new-todo').should('have.text', '');",
+                  "err": {},
+                  "uuid": "159ee2ed-5caa-4a8d-91ef-6a84b383483a",
+                  "parentUUID": "5596a531-3b1e-4c1b-832d-9fb54818d01f",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should append new items to the bottom of the list",
+                  "fullTitle": "TodoMVC - React New Todo should append new items to the bottom of the list",
+                  "timedOut": null,
+                  "duration": 310,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// this is an example of a custom command\n// defined in cypress/support/commands.js\ncy.createDefaultTodos().as('todos'); // even though the text content is split across\n// multiple <span> and <strong> elements\n// `cy.contains` can verify this correctly\ncy.get('.todo-count').contains('3 items left');\ncy.get('@todos').eq(0).find('label').should('contain', TODO_ITEM_ONE);\ncy.get('@todos').eq(1).find('label').should('contain', TODO_ITEM_TWO);\ncy.get('@todos').eq(2).find('label').should('contain', TODO_ITEM_THREE);",
+                  "err": {
+                    "message": "TypeError: cy.createDefaultTodos is not a function",
+                    "estack": "TypeError: cy.createDefaultTodos is not a function\n    at Context.eval (http://127.0.0.1:8887/__cypress/tests?p=cypress\\tests\\app.cy.js:170:10)",
+                    "diff": null
+                  },
+                  "uuid": "2b50630f-295f-4c54-bc43-495a5c4dd552",
+                  "parentUUID": "5596a531-3b1e-4c1b-832d-9fb54818d01f",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should show #main and #footer when items added",
+                  "fullTitle": "TodoMVC - React New Todo should show #main and #footer when items added",
+                  "timedOut": null,
+                  "duration": 314,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.createTodo(TODO_ITEM_ONE);\ncy.get('.main').should('be.visible');\ncy.get('.footer').should('be.visible');",
+                  "err": {
+                    "message": "TypeError: cy.createTodo is not a function",
+                    "estack": "TypeError: cy.createTodo is not a function\n    at Context.eval (http://127.0.0.1:8887/__cypress/tests?p=cypress\\tests\\app.cy.js:180:10)",
+                    "diff": null
+                  },
+                  "uuid": "7133815f-ed6b-42eb-8bd0-da6a0023e1b4",
+                  "parentUUID": "5596a531-3b1e-4c1b-832d-9fb54818d01f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "b811a8fa-8e8c-4295-a8c8-1f0808aa203b",
+                "f715364c-8f3d-4722-a5e5-1260569c6f87",
+                "159ee2ed-5caa-4a8d-91ef-6a84b383483a"
+              ],
+              "failures": [
+                "2b50630f-295f-4c54-bc43-495a5c4dd552",
+                "7133815f-ed6b-42eb-8bd0-da6a0023e1b4"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 2847,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "f037d0f6-50ff-474d-b759-6e01d3ca2a53",
+              "title": "Mark all as completed",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should allow me to mark all items as completed",
+                  "fullTitle": "TodoMVC - React Mark all as completed should allow me to mark all items as completed",
+                  "timedOut": null,
+                  "duration": 159,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// complete all todos\n// we use 'check' instead of 'click'\n// because that indicates our intention much clearer\ncy.get('.toggle-all').check(); // get each todo li and ensure its class is 'completed'\ncy.get('@todos').eq(0).should('have.class', 'completed');\ncy.get('@todos').eq(1).should('have.class', 'completed');\ncy.get('@todos').eq(2).should('have.class', 'completed');",
+                  "err": {
+                    "message": "TypeError: cy.createDefaultTodos is not a function\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Mark all as completed`",
+                    "estack": "TypeError: cy.createDefaultTodos is not a function\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Mark all as completed`\n    at Context.eval (http://127.0.0.1:8887/__cypress/tests?p=cypress\\tests\\app.cy.js:195:10)",
+                    "diff": null
+                  },
+                  "uuid": "5abce0f8-ecc0-4e2d-9452-293293a4ed86",
+                  "parentUUID": "f037d0f6-50ff-474d-b759-6e01d3ca2a53",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should allow me to clear the complete state of all items",
+                  "fullTitle": "TodoMVC - React Mark all as completed should allow me to clear the complete state of all items",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// check and then immediately uncheck\ncy.get('.toggle-all').check().uncheck();\ncy.get('@todos').eq(0).should('not.have.class', 'completed');\ncy.get('@todos').eq(1).should('not.have.class', 'completed');\ncy.get('@todos').eq(2).should('not.have.class', 'completed');",
+                  "err": {},
+                  "uuid": "c30137d5-a58b-44cf-aba8-7fa7c7cf8a65",
+                  "parentUUID": "f037d0f6-50ff-474d-b759-6e01d3ca2a53",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "complete all checkbox should update state when items are completed / cleared",
+                  "fullTitle": "TodoMVC - React Mark all as completed complete all checkbox should update state when items are completed / cleared",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// alias the .toggle-all for reuse later\ncy.get('.toggle-all').as('toggleAll').check() // this assertion is silly here IMO but\n// it is what TodoMVC does\n.should('be.checked'); // alias the first todo and then click it\ncy.get('.todo-list li').eq(0).as('firstTodo').find('.toggle').uncheck(); // reference the .toggle-all element again\n// and make sure its not checked\ncy.get('@toggleAll').should('not.be.checked'); // reference the first todo again and now toggle it\ncy.get('@firstTodo').find('.toggle').check(); // assert the toggle all is checked again\ncy.get('@toggleAll').should('be.checked');",
+                  "err": {},
+                  "uuid": "8d89c025-2444-4941-976f-812c0077e700",
+                  "parentUUID": "f037d0f6-50ff-474d-b759-6e01d3ca2a53",
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "5abce0f8-ecc0-4e2d-9452-293293a4ed86"
+              ],
+              "pending": [],
+              "skipped": [
+                "c30137d5-a58b-44cf-aba8-7fa7c7cf8a65",
+                "8d89c025-2444-4941-976f-812c0077e700"
+              ],
+              "duration": 159,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "59a40b01-df1e-4987-a9b7-1019d9366b13",
+              "title": "Item",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should allow me to mark items as complete",
+                  "fullTitle": "TodoMVC - React Item should allow me to mark items as complete",
+                  "timedOut": null,
+                  "duration": 315,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// we are aliasing the return value of\n// our custom command 'createTodo'\n//\n// the return value is the <li> in the <ul.todos-list>\ncy.createTodo(TODO_ITEM_ONE).as('firstTodo');\ncy.createTodo(TODO_ITEM_TWO).as('secondTodo');\ncy.get('@firstTodo').find('.toggle').check();\ncy.get('@firstTodo').should('have.class', 'completed');\ncy.get('@secondTodo').should('not.have.class', 'completed');\ncy.get('@secondTodo').find('.toggle').check();\ncy.get('@firstTodo').should('have.class', 'completed');\ncy.get('@secondTodo').should('have.class', 'completed');",
+                  "err": {
+                    "message": "TypeError: cy.createTodo is not a function",
+                    "estack": "TypeError: cy.createTodo is not a function\n    at Context.eval (http://127.0.0.1:8887/__cypress/tests?p=cypress\\tests\\app.cy.js:238:10)",
+                    "diff": null
+                  },
+                  "uuid": "ab3aa52f-42af-4604-812f-a120c07fe2d9",
+                  "parentUUID": "59a40b01-df1e-4987-a9b7-1019d9366b13",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should allow me to un-mark items as complete",
+                  "fullTitle": "TodoMVC - React Item should allow me to un-mark items as complete",
+                  "timedOut": null,
+                  "duration": 293,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.createTodo(TODO_ITEM_ONE).as('firstTodo');\ncy.createTodo(TODO_ITEM_TWO).as('secondTodo');\ncy.get('@firstTodo').find('.toggle').check();\ncy.get('@firstTodo').should('have.class', 'completed');\ncy.get('@secondTodo').should('not.have.class', 'completed');\ncy.get('@firstTodo').find('.toggle').uncheck();\ncy.get('@firstTodo').should('not.have.class', 'completed');\ncy.get('@secondTodo').should('not.have.class', 'completed');",
+                  "err": {
+                    "message": "TypeError: cy.createTodo is not a function",
+                    "estack": "TypeError: cy.createTodo is not a function\n    at Context.eval (http://127.0.0.1:8887/__cypress/tests?p=cypress\\tests\\app.cy.js:248:10)",
+                    "diff": null
+                  },
+                  "uuid": "de650444-cceb-413c-aaf2-45e49f889675",
+                  "parentUUID": "59a40b01-df1e-4987-a9b7-1019d9366b13",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should allow me to edit an item",
+                  "fullTitle": "TodoMVC - React Item should allow me to edit an item",
+                  "timedOut": null,
+                  "duration": 299,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.createDefaultTodos().as('todos');\ncy.get('@todos').eq(1).as('secondTodo') // TODO: fix this, dblclick should\n// have been issued to label\n.find('label').dblclick(); // clear out the inputs current value\n// and type a new value\ncy.get('@secondTodo').find('.edit').clear().type('buy some sausages').type('{enter}'); // explicitly assert about the text value\ncy.get('@todos').eq(0).should('contain', TODO_ITEM_ONE);\ncy.get('@secondTodo').should('contain', 'buy some sausages');\ncy.get('@todos').eq(2).should('contain', TODO_ITEM_THREE);",
+                  "err": {
+                    "message": "TypeError: cy.createDefaultTodos is not a function",
+                    "estack": "TypeError: cy.createDefaultTodos is not a function\n    at Context.eval (http://127.0.0.1:8887/__cypress/tests?p=cypress\\tests\\app.cy.js:258:10)",
+                    "diff": null
+                  },
+                  "uuid": "eb6388a0-eab7-488f-b7ed-4126317fec39",
+                  "parentUUID": "59a40b01-df1e-4987-a9b7-1019d9366b13",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "ab3aa52f-42af-4604-812f-a120c07fe2d9",
+                "de650444-cceb-413c-aaf2-45e49f889675",
+                "eb6388a0-eab7-488f-b7ed-4126317fec39"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 907,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "5615dd36-f21f-45f6-b47f-435948dab8af",
+              "title": "Editing",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should hide other controls when editing",
+                  "fullTitle": "TodoMVC - React Editing should hide other controls when editing",
+                  "timedOut": null,
+                  "duration": 161,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@todos').eq(1).as('secondTodo').find('label').dblclick();\ncy.get('@secondTodo').find('.toggle').should('not.be.visible');\ncy.get('@secondTodo').find('label').should('not.be.visible');",
+                  "err": {
+                    "message": "TypeError: cy.createDefaultTodos is not a function\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Editing`",
+                    "estack": "TypeError: cy.createDefaultTodos is not a function\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Editing`\n    at Context.eval (http://127.0.0.1:8887/__cypress/tests?p=cypress\\tests\\app.cy.js:275:10)",
+                    "diff": null
+                  },
+                  "uuid": "130694e5-1ff1-473b-8fb5-e21ad52cc20a",
+                  "parentUUID": "5615dd36-f21f-45f6-b47f-435948dab8af",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should save edits on blur",
+                  "fullTitle": "TodoMVC - React Editing should save edits on blur",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@todos').eq(1).as('secondTodo').find('label').dblclick();\ncy.get('@secondTodo').find('.edit').clear().type('buy some sausages') // we can just send the blur event directly\n// to the input instead of having to click\n// on another button on the page. though you\n// could do that its just more mental work\n.blur();\ncy.get('@todos').eq(0).should('contain', TODO_ITEM_ONE);\ncy.get('@secondTodo').should('contain', 'buy some sausages');\ncy.get('@todos').eq(2).should('contain', TODO_ITEM_THREE);",
+                  "err": {},
+                  "uuid": "4a3fe7dc-05ae-49e9-83fc-18fb323a442f",
+                  "parentUUID": "5615dd36-f21f-45f6-b47f-435948dab8af",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "should trim entered text",
+                  "fullTitle": "TodoMVC - React Editing should trim entered text",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@todos').eq(1).as('secondTodo').find('label').dblclick();\ncy.get('@secondTodo').find('.edit').clear().type('    buy some sausages    ').type('{enter}');\ncy.get('@todos').eq(0).should('contain', TODO_ITEM_ONE);\ncy.get('@secondTodo').should('contain', 'buy some sausages');\ncy.get('@todos').eq(2).should('contain', TODO_ITEM_THREE);",
+                  "err": {},
+                  "uuid": "e834c707-443e-45a9-a979-54005bf237b8",
+                  "parentUUID": "5615dd36-f21f-45f6-b47f-435948dab8af",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "should remove the item if an empty text string was entered",
+                  "fullTitle": "TodoMVC - React Editing should remove the item if an empty text string was entered",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@todos').eq(1).as('secondTodo').find('label').dblclick();\ncy.get('@secondTodo').find('.edit').clear().type('{enter}');\ncy.get('@todos').should('have.length', 2);",
+                  "err": {},
+                  "uuid": "c09fbaac-2497-4115-a804-ccd881b83cca",
+                  "parentUUID": "5615dd36-f21f-45f6-b47f-435948dab8af",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "should cancel edits on escape",
+                  "fullTitle": "TodoMVC - React Editing should cancel edits on escape",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@todos').eq(1).as('secondTodo').find('label').dblclick();\ncy.get('@secondTodo').find('.edit').clear().type('foo{esc}');\ncy.get('@todos').eq(0).should('contain', TODO_ITEM_ONE);\ncy.get('@todos').eq(1).should('contain', TODO_ITEM_TWO);\ncy.get('@todos').eq(2).should('contain', TODO_ITEM_THREE);",
+                  "err": {},
+                  "uuid": "6c019438-2bc5-48dd-9a43-f4288537fae6",
+                  "parentUUID": "5615dd36-f21f-45f6-b47f-435948dab8af",
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "130694e5-1ff1-473b-8fb5-e21ad52cc20a"
+              ],
+              "pending": [],
+              "skipped": [
+                "4a3fe7dc-05ae-49e9-83fc-18fb323a442f",
+                "e834c707-443e-45a9-a979-54005bf237b8",
+                "c09fbaac-2497-4115-a804-ccd881b83cca",
+                "6c019438-2bc5-48dd-9a43-f4288537fae6"
+              ],
+              "duration": 161,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "2cbab812-0bef-4963-b9e5-e9f500fb729d",
+              "title": "Counter",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should display the current number of todo items",
+                  "fullTitle": "TodoMVC - React Counter should display the current number of todo items",
+                  "timedOut": null,
+                  "duration": 340,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.createTodo(TODO_ITEM_ONE);\ncy.get('.todo-count').contains('1 item left');\ncy.createTodo(TODO_ITEM_TWO);\ncy.get('.todo-count').contains('2 items left');",
+                  "err": {
+                    "message": "TypeError: cy.createTodo is not a function",
+                    "estack": "TypeError: cy.createTodo is not a function\n    at Context.eval (http://127.0.0.1:8887/__cypress/tests?p=cypress\\tests\\app.cy.js:315:10)",
+                    "diff": null
+                  },
+                  "uuid": "5684a96f-a8a8-4ae3-bf43-3696d94e3625",
+                  "parentUUID": "2cbab812-0bef-4963-b9e5-e9f500fb729d",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "5684a96f-a8a8-4ae3-bf43-3696d94e3625"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 340,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "7473e9f8-0b38-4893-ab6a-f9441459cebb",
+              "title": "Clear completed button",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should display the correct text",
+                  "fullTitle": "TodoMVC - React Clear completed button should display the correct text",
+                  "timedOut": null,
+                  "duration": 170,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@todos').eq(0).find('.toggle').check();\ncy.get('.clear-completed').contains('Clear completed');",
+                  "err": {
+                    "message": "TypeError: cy.createDefaultTodos is not a function\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Clear completed button`",
+                    "estack": "TypeError: cy.createDefaultTodos is not a function\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Clear completed button`\n    at Context.eval (http://127.0.0.1:8887/__cypress/tests?p=cypress\\tests\\app.cy.js:323:10)",
+                    "diff": null
+                  },
+                  "uuid": "53b787be-a729-4691-ae00-9f51f57564c1",
+                  "parentUUID": "7473e9f8-0b38-4893-ab6a-f9441459cebb",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should remove completed items when clicked",
+                  "fullTitle": "TodoMVC - React Clear completed button should remove completed items when clicked",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@todos').eq(1).find('.toggle').check();\ncy.get('.clear-completed').click();\ncy.get('@todos').should('have.length', 2);\ncy.get('@todos').eq(0).should('contain', TODO_ITEM_ONE);\ncy.get('@todos').eq(1).should('contain', TODO_ITEM_THREE);",
+                  "err": {},
+                  "uuid": "8e4fab5a-5cdf-4308-8ca5-cb34a33c23be",
+                  "parentUUID": "7473e9f8-0b38-4893-ab6a-f9441459cebb",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "should be hidden when there are no items that are completed",
+                  "fullTitle": "TodoMVC - React Clear completed button should be hidden when there are no items that are completed",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@todos').eq(1).find('.toggle').check();\ncy.get('.clear-completed').should('be.visible').click();\ncy.get('.clear-completed').should('not.exist');",
+                  "err": {},
+                  "uuid": "e74b76db-cb0d-4fbd-8ce7-8001e487d404",
+                  "parentUUID": "7473e9f8-0b38-4893-ab6a-f9441459cebb",
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "53b787be-a729-4691-ae00-9f51f57564c1"
+              ],
+              "pending": [],
+              "skipped": [
+                "8e4fab5a-5cdf-4308-8ca5-cb34a33c23be",
+                "e74b76db-cb0d-4fbd-8ce7-8001e487d404"
+              ],
+              "duration": 170,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "63f6edf9-07d9-4068-89c7-2dd006105204",
+              "title": "Persistence",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should persist its data",
+                  "fullTitle": "TodoMVC - React Persistence should persist its data",
+                  "timedOut": null,
+                  "duration": 394,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// mimicking TodoMVC tests\n// by writing out this function\nfunction testState() {\n  cy.get('@firstTodo').should('contain', TODO_ITEM_ONE).and('have.class', 'completed');\n  cy.get('@secondTodo').should('contain', TODO_ITEM_TWO).and('not.have.class', 'completed');\n}\ncy.createTodo(TODO_ITEM_ONE).as('firstTodo');\ncy.createTodo(TODO_ITEM_TWO).as('secondTodo');\ncy.get('@firstTodo').find('.toggle').check().then(testState).reload().then(testState);",
+                  "err": {
+                    "message": "TypeError: cy.createTodo is not a function",
+                    "estack": "TypeError: cy.createTodo is not a function\n    at Context.eval (http://127.0.0.1:8887/__cypress/tests?p=cypress\\tests\\app.cy.js:351:10)",
+                    "diff": null
+                  },
+                  "uuid": "680d28ea-4545-4d90-aa44-cebfd42d6325",
+                  "parentUUID": "63f6edf9-07d9-4068-89c7-2dd006105204",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "680d28ea-4545-4d90-aa44-cebfd42d6325"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 394,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "a9122428-ed6b-427c-9a63-ffee3b32ab4f",
+              "title": "Routing",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should allow me to display active items",
+                  "fullTitle": "TodoMVC - React Routing should allow me to display active items",
+                  "timedOut": null,
+                  "duration": 182,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@todos').eq(1).find('.toggle').check();\ncy.get('.filters').contains('Active').click();\ncy.get('@todos').eq(0).should('contain', TODO_ITEM_ONE);\ncy.get('@todos').eq(1).should('contain', TODO_ITEM_THREE);",
+                  "err": {
+                    "message": "TypeError: cy.createDefaultTodos is not a function\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Routing`",
+                    "estack": "TypeError: cy.createDefaultTodos is not a function\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Routing`\n    at Context.eval (http://127.0.0.1:8887/__cypress/tests?p=cypress\\tests\\app.cy.js:363:10)",
+                    "diff": null
+                  },
+                  "uuid": "2e82061d-1120-4804-b4db-137d4166db9b",
+                  "parentUUID": "a9122428-ed6b-427c-9a63-ffee3b32ab4f",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should respect the back button",
+                  "fullTitle": "TodoMVC - React Routing should respect the back button",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@todos').eq(1).find('.toggle').check();\ncy.get('.filters').contains('Active').click();\ncy.get('.filters').contains('Completed').click();\ncy.get('@todos').should('have.length', 1);\ncy.go('back');\ncy.get('@todos').should('have.length', 2);\ncy.go('back');\ncy.get('@todos').should('have.length', 3);",
+                  "err": {},
+                  "uuid": "24bcad0f-7425-4b3d-823b-75179ed6b2c4",
+                  "parentUUID": "a9122428-ed6b-427c-9a63-ffee3b32ab4f",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "should allow me to display completed items",
+                  "fullTitle": "TodoMVC - React Routing should allow me to display completed items",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@todos').eq(1).find('.toggle').check();\ncy.get('.filters').contains('Completed').click();\ncy.get('@todos').should('have.length', 1);",
+                  "err": {},
+                  "uuid": "4b7edee1-a56b-4e59-b070-11568eae413c",
+                  "parentUUID": "a9122428-ed6b-427c-9a63-ffee3b32ab4f",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "should allow me to display all items",
+                  "fullTitle": "TodoMVC - React Routing should allow me to display all items",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@todos').eq(1).find('.toggle').check();\ncy.get('.filters').contains('Active').click();\ncy.get('.filters').contains('Completed').click();\ncy.get('.filters').contains('All').click();\ncy.get('@todos').should('have.length', 3);",
+                  "err": {},
+                  "uuid": "32628ee9-b15d-4df5-9a48-5399529c393b",
+                  "parentUUID": "a9122428-ed6b-427c-9a63-ffee3b32ab4f",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "should highlight the currently applied filter",
+                  "fullTitle": "TodoMVC - React Routing should highlight the currently applied filter",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// using a within here which will automatically scope\n// nested 'cy' queries to our parent element <ul.filters>\ncy.get('.filters').within(function () {\n  cy.contains('All').should('have.class', 'selected');\n  cy.contains('Active').click().should('have.class', 'selected');\n  cy.contains('Completed').click().should('have.class', 'selected');\n});",
+                  "err": {},
+                  "uuid": "c8eb0479-4aed-42f0-a4dd-e26c4b82c0b5",
+                  "parentUUID": "a9122428-ed6b-427c-9a63-ffee3b32ab4f",
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "2e82061d-1120-4804-b4db-137d4166db9b"
+              ],
+              "pending": [],
+              "skipped": [
+                "24bcad0f-7425-4b3d-823b-75179ed6b2c4",
+                "4b7edee1-a56b-4e59-b070-11568eae413c",
+                "32628ee9-b15d-4df5-9a48-5399529c393b",
+                "c8eb0479-4aed-42f0-a4dd-e26c4b82c0b5"
+              ],
+              "duration": 182,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

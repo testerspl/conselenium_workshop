@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "testerzy.pl-cypress-todomvc",
+  "version": "0.0.1",
+  "description": "Cypress tests demo app",
+  "scripts": {
+    "start": "http-server -c-1 -p 4700 "
+  },
+  "dependencies": {
+    "director": "1.2.8",
+    "react": "0.13.3",
+    "http-server": "14.1.1",
+    "todomvc-app-css": "2.4.2",
+    "todomvc-common": "cypress-io/todomvc-common#88b7c6359ad4a5097312d8b2a21dd539ce9f4446"
+  },
+  "devDependencies": {
+    "@types/node": "18.6.3",
+    "debug": "4.3.4"
+  }
+}
