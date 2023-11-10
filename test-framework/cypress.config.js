@@ -1,7 +1,6 @@
 const { defineConfig } = require('cypress');
 
-module.exports = defineConfig(
-	{
+module.exports = defineConfig({
 	animationDistanceThreshold: 20,
 	chromeWebSecurity: true,
 	defaultCommandTimeout: 4000,
@@ -28,7 +27,6 @@ module.exports = defineConfig(
 	userAgent: null,
 	video: false,
 	videoCompression: 32,
-	videoUploadOnPasses: true,
 	videosFolder: 'cypress/videos',
 	viewportHeight: 1080,
 	viewportWidth: 1920,
