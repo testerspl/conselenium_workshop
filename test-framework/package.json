@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "e2e-dev": "cypress open --env ENVIRONMENT=dev -b chrome --e2e",
-    "e2e-uat": "cypress open --env ENVIRONMENT=uat -b chrome --e2e export CYPRESS_ENVIRONMENT=uat",
-    "e2e-prod": "cypress open --env ENVIRONMENT=prod -b chrome --e2e export CYPRESS_ENVIRONMENT=prod",
-    "run-prod":"cypress run --env ENVIRONMENT=prod -b chrome --e2e export CYPRESS_ENVIRONMENT=prod",
+    "e2e-uat": "cypress open --env ENVIRONMENT=uat -b chrome --e2e",
+    "e2e-prod": "cypress open --env ENVIRONMENT=prod -b chrome --e2e",
+    "run-prod":"cypress run --env ENVIRONMENT=prod -b chrome --e2e",
     "cyopen": "cypress open",
     "start-app-prod": "http-server ../app-version-one -p 4700",
     "start-app-test": "http-server ../app-version-two -p 4800",
