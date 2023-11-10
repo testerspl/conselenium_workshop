@@ -47,4 +47,4 @@ jobs:
           working-directory: test-framework
           browser: chrome
           env: ENVIRONMENT=prod
-          command: npm run e2e-prod
+          command: npm run run-prod
