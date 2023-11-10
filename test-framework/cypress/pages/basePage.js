@@ -13,13 +13,16 @@ export default class BasePage {
 			return Cypress.env('todoUat');
 		} else if (Cypress.env('ENVIRONMENT') === 'prod') {
 			return Cypress.env('todoProd');
+		} else {
+			return Cypress.env('todoProd');
 		}
 	}
 
 	visitPage() {
 		try {
-			
-			cy.visit(this.url = this.getAppUrl()).url().should('include', this.url);
+			cy.visit((this.url = this.getAppUrl()))
+				.url()
+				.should('include', this.url);
 		} catch (ex) {
 			console.log('Visit error with url: \n' + this.url + '\n' + ex);
 		}
