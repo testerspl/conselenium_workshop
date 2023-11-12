@@ -1,8 +1,10 @@
 // type definitions for Cypress object "cy"
 /// <reference types="cypress" />
-
+import 'cypress-failed-log';
 import { todoPage } from '../pages/todoPage/todoPage';
 
+let includUrl = 'localhost:4700';
+let appUrl = 'http://localhost:4700/';
 describe('TodoMVC - React', function () {
 	// setup these constants to match what TodoMVC does
 	let TODO_ITEM_ONE = 'buy some cheese';
@@ -39,11 +41,17 @@ describe('TodoMVC - React', function () {
 	// Simple example test presentations
 	context('Add todo test presentation', function () {
 		it('Should add todos', function () {
-			cy.fixture('todo').then((testDataObject) => {
-				console.log(testDataObject.name_1);
-			});
+			cy.url().should('include', includUrl);
 
-			cy.get('.new-todo').type('learn testing{enter}').type('be cool{enter}');
+			cy.url().then((url) => {
+				assert.strictEqual(url, appUrl);
+				expect(url).to.equal(appUrl);
+			});
+			cy.get('.new-todo')
+				.type(`Moje pierwsze zadanie}{enter}`)
+				.type('be cool')
+				.type('{enter}');
+
 			cy.get('.todo-list li').should('have.length', 2);
 		});
 	});

@@ -11,20 +11,12 @@
 // https://on.cypress.io/commands
 // ***********************************************
 
-import BasePage from '../pages/basePage';
-
-class AddTodo extends BasePage {
-	getRandomTodoName(len = 10, type = 'letters') {
-		this.randomString(len, type);
-	}
-}
+import BasePage from '../../pages/basePage';
 
 Cypress.Commands.add(
 	'todoWithRandomCharacters',
-	(len = 10, type = 'letters', selector = '.new-todo') => {
-		cy.get(selector).type(
-			`${new AddTodo().getRandomTodoName(len, type)}{enter}`
-		);
+	function (len = 10, type = 'letters', selector = '.new-todo') {
+		cy.get(selector).type(`${new BasePage().randomString(len, type)}{enter}`);
 	}
 );
 

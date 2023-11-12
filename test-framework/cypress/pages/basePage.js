@@ -5,7 +5,6 @@ export default class BasePage {
 		this.url = '';
 	}
 
-	// IF można zastąpić operatorem logicznym / warunkowym: process.env('ENVIRONMENT') === 'demo' ? zwracamy prawdę : zwracamy fałsz
 	getAppUrl() {
 		if (Cypress.env('ENVIRONMENT') === 'dev') {
 			return Cypress.env('todoDev');

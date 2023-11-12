@@ -33,7 +33,9 @@ module.exports = defineConfig({
 	waitForAnimations: true,
 	watchForFileChanges: false,
 	e2e: {
-		setupNodeEvents(on, config) {},
+		setupNodeEvents(on, config) {
+			require('cypress-failed-log/on')(on);
+		},
 		baseUrl: 'https://testerzy.pl',
 		excludeSpecPattern: '*.hot-update.js',
 		specPattern: 'cypress/tests/**/*.{js,jsx,ts,tsx}',

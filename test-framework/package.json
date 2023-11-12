@@ -7,13 +7,13 @@
     "e2e-dev": "cypress open --env ENVIRONMENT=dev -b chrome --e2e",
     "e2e-uat": "cypress open --env ENVIRONMENT=uat -b chrome --e2e",
     "e2e-prod": "cypress open --env ENVIRONMENT=prod -b chrome --e2e",
-    "run-prod":"cypress run --env ENVIRONMENT=prod -b chrome --e2e",
+    "run-prod": "cypress run --env ENVIRONMENT=prod -b chrome --e2e",
     "cyopen": "cypress open",
     "start-app-prod": "http-server ../app-version-one -p 4700",
     "start-app-test": "http-server ../app-version-two -p 4800",
     "start-app-dev": "http-server ../app-version-three -p 4900",
     "start-ci": "http-server ../app-version-one -p 4700 -c-1 --silent",
-    "test-ci": "run-p  start-ci e2e"
+    "test-ci": "run-p  start-ci e2e-prod"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,9 @@
   },
   "homepage": "https://github.com/testerspl/conselenium_workshop/blob/main/README.md",
   "dependencies": {
+    "@faker-js/faker": "^8.2.0",
     "cypress": ">=13.4.0",
+    "cypress-failed-log": "^2.10.0",
     "http-server": ">=14.1.1",
     "mocha": ">=10.2.0",
     "mochawesome": ">=7.1.3",
