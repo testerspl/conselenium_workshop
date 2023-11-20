@@ -5,6 +5,7 @@ import { todoPage } from '../pages/todoPage/todoPage';
 
 let includUrl = 'localhost:4700';
 let appUrl = 'http://localhost:4700/';
+
 describe('TodoMVC - React', function () {
 	// setup these constants to match what TodoMVC does
 	let TODO_ITEM_ONE = 'buy some cheese';
@@ -47,12 +48,29 @@ describe('TodoMVC - React', function () {
 				assert.strictEqual(url, appUrl);
 				expect(url).to.equal(appUrl);
 			});
-			cy.get('.new-todo')
-				.type(`Moje pierwsze zadanie}{enter}`)
-				.type('be cool')
-				.type('{enter}');
+			todoPage.addTodo();
+			todoPage.addTodo('Moje drugie zadanie');
 
-			cy.get('.todo-list li').should('have.length', 2);
+			todoPage.checkTodoList();
+		});
+
+		it('Should add todos1', function () {
+			todoPage.addTodo(' ');
+
+			todoPage.checkTodoList(0);
+		});
+
+		it('Should add todos1', function () {
+			todoPage.addTodo(' ');
+			todoPage.checkTodoList(0);
+			todoPage.checkTabSelected();
+		});
+
+		it.only('Should add todos1', function () {
+			todoPage
+			.addTodo()
+			.markAsCompleted()
+			.checkTodoCompleted();
 		});
 	});
 });
